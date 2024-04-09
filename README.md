@@ -38,3 +38,45 @@
 - **Améliorations possibles** :
   - **Gestion de l'Énergie** : Envisagez d'ajouter un système de gestion de l'énergie pour optimiser l'autonomie, notamment en mettant en veille certains composants non utilisés.
   - **Capteurs Supplémentaires** : Pour une meilleure adaptation aux environnements complexes, envisagez d'ajouter des capteurs supplémentaires (par exemple, capteurs de sol pour détecter différents types de terrains).
+
+### Bilan Énergétique
+
+Pour évaluer le bilan énergétique du robot tondeuse, nous allons estimer la consommation totale d'énergie basée sur les composants énumérés et calculer la capacité de batterie nécessaire pour une autonomie souhaitée.
+
+#### Estimation de la Consommation
+
+- **Moteurs de Propulsion** : \(2 \times 3600 \, \text{mA} = 7200 \, \text{mA}\)
+- **Moteur de Coupe** : \(800 \, \text{mA}\)
+- **Accéléromètre/Gyroscope** : \(100 \, \text{mA}\)
+- **LEDs** : \(2 \times 185 \, \text{mA} = 370 \, \text{mA}\)
+- **Capteurs Fin de Course** : \(5 \times 10 \, \text{mA} = 50 \, \text{mA}\)
+- **Capteur d'Humidité** : \(1 \, \text{µA} \approx 0 \, \text{mA}\) (négligeable)
+- **LIDAR** : \(180 \, \text{mA}\)
+- **Ecran LCD** : \(20 \, \text{mA}\)
+- **GPS** : \(16 \, \text{mA}\)
+
+Le courant total estimé pour le fonctionnement simultané de tous les composants est donc :
+
+\[
+7200 \, \text{mA} + 800 \, \text{mA} + 100 \, \text{mA} + 370 \, \text{mA} + 50 \, \text{mA} + 180 \, \text{mA} + 20 \, \text{mA} + 16 \, \text{mA} = 8736 \, \text{mA} \, (ou \, 8.736 \, \text{A})
+\]
+
+#### Calcul de la Capacité de la Batterie Nécessaire
+
+Pour une autonomie souhaitée de, disons, 1 heure (60 minutes), la capacité de la batterie nécessaire peut être calculée comme suit :
+
+\[
+\text{Capacité} = \text{Courant Total} \times \text{Durée} = 8.736 \, \text{A} \times 1 \, \text{heure} = 8.736 \, \text{Ah}
+\]
+
+Pour garantir une marge de sécurité et prendre en compte les inefficacités et les variations de consommation, il est conseillé d'augmenter cette valeur de 20% à 30%. Ainsi, une capacité de batterie d'au moins :
+
+\[
+8.736 \, \text{Ah} \times 1.25 \approx 11 \, \text{Ah}
+\]
+
+serait recommandée pour une autonomie d'une heure.
+
+#### Conclusion
+
+Il est crucial de choisir une batterie avec une capacité suffisante pour répondre à la demande énergétique du robot, tout en prenant en compte la tension requise par les composants. Une batterie de 12V, 11Ah ou plus, serait idéale pour ce projet.
